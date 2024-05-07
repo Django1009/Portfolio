@@ -27,17 +27,29 @@
       </ul>
     </div>
   </nav>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Drake Stone Banner</title>
-</head>
-<body>
-  <header class="banner">
-    <h1>Drake ㅤㅤㅤㅤㅤㅤ*Portfolio*ㅤㅤㅤㅤㅤㅤㅤ Stone</h1>
-  </header>
-  <canvas id="myCanvas" width="400" height="200"></canvas>
-  <header>error</header>
-</body>
+  <body>
+    <header class="banner">
+      <h1>Drake ㅤㅤㅤㅤㅤㅤ*Portfolio*ㅤㅤㅤㅤㅤㅤㅤ Stone</h1>
+    </header>
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    const data = [30, 20, 50, 70, 6, 1];
+    const barWidth = 30;
+    const barSpacing = 10;
+    const startX = 10;
+    let x = startX;
+    const maxY = Math.max(...data);
+    const scale = 100 / maxY;
+    data.forEach((value) => {
+      const barHeight = value * scale;
+      ctx.fillStyle = 'blue';
+      ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+      x += barWidth + barSpacing;
+    });
+    ctx.fillStyle = 'black';
+    ctx.font = '14px Arial';
+    ctx.fillText('HTTP   CSS    Ps       Ai       Pr       Py', 0, 50);
+  </script>
 </HTML>
